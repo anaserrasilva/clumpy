@@ -26,6 +26,8 @@ Script = argv[0]
 Distance = argv[1]
 binWidth = argv[2]
 
+binWidth = int(binWidth)
+
 ######load trees and prep them analysis
 tree_collection = []
 for newick in open('compareTrees.tre'):
@@ -44,9 +46,9 @@ for t in tree_collection:
 
 ###RF-matrix from ete
 
-RFmatrixUncorrected = np.zeros((1,len(tree_collection)), dtype=object)
+RFmatrixUncorrected = np.zeros((len(tree_collection),), dtype=object)
 #RFmatrixNormalised = np.zeros((1,len(tree_collection)), dtype=object)
-RFmatrixWeighted = np.zeros((1,len(tree_collection)), dtype=object)
+RFmatrixWeighted = np.zeros((len(tree_collection),), dtype=object)
 counter = 0
 for t in tree_collection:
     
@@ -68,9 +70,9 @@ for t in tree_collection:
                             
                 wRF = RF[0] * (len(tree_collection[0].get_edges())/((len(RF[3]) - len(RF[5]))))
                 
-                RFmatrixUncorrected[0, tree_collection.index(p)] = RF[0]
+                RFmatrixUncorrected[tree_collection.index(p),] = RF[0]
                 #RFmatrixNormalised[0, tree_collection.index(p)] = RFnorm
-                RFmatrixWeighted[0, tree_collection.index(p)] = wRF
+                RFmatrixWeighted[tree_collection.index(p),] = wRF
             
         counter =+ 1
 
@@ -113,7 +115,7 @@ for i in range(0, (RFmax+binWidth), binWidth):
 
 #plt.hist(RFmatrixUncorrected.tolist(), bins=100)
 print("Close plot window to enter threshold value.")
-plt.hist(RFmatrix.tolist()[1:], histtype = 'stepfilled', bins=binList)
+plt.hist(np.delete(RFmatrix,0).tolist(), histtype = 'stepfilled', bins=binList)
 temp = glob.glob('histogram*')
 tempName = ["histogram_", str(len(temp)+1), ".svg"]
 fileName = ''.join(tempName)
