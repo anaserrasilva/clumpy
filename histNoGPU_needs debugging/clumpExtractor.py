@@ -20,7 +20,7 @@ fileNameST = ''.join(tempSTname)
 trees[0].write(path = fileNameST, schema = 'newick',)
 
 
-RFmatrix = np.loadtxt('uncorrectedRFMatrix.txt', delimiter=',', dtype=int)
+RFmatrix = np.loadtxt('RFMatrix.txt', delimiter=',')
 
 threshold = int(np.loadtxt('threshold.txt', dtype=int))
 temp = glob.glob('threshold*')
@@ -45,10 +45,8 @@ p[0,s] = 'b'
 
 #find indexes of trees to extract
 r = np.where(p[0,:] == 'b')
-r = str(r).partition('[')[2].partition(']')[0] #strips number from array
-r = re.sub(r"[\n\s+]*", "", r)
-r = r.split(sep = ',')
-r = list(map(int, r))
+r = r[0]
+r = r.tolist()
 
 #extract clump
 clump = dendro.TreeList()

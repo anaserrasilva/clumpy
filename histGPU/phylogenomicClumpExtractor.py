@@ -12,7 +12,7 @@ Usage: python3 phylogenomicClumpExtractor.py *.tre Distance binWidth
                      
                      The first argument corresponds to the file of Newick formatted trees.
                      
-                     The second argument, Distance, corresponds to your Robinson-Foulds distance of choice, 'uncorrectedRF' corresponds to the raw RF distance between two partially overlapping trees and 'weightedRF' corresponds to the RF modification described in Serra Silva and Wilkinson (202X).
+                     The second argument, Distance, corresponds to your Robinson-Foulds distance of choice, 'uRF' corresponds to the raw RF distance between two partially overlapping trees and 'wRF' corresponds to the RF modification described in Serra Silva and Wilkinson (202X).
                      
                      The third argument, binWidth, sets the histogram bin width.
                      

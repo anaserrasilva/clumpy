@@ -76,7 +76,7 @@ for t in tree_collection:
             
         counter =+ 1
 
-if Distance == 'uncorrectedRF':
+if Distance == 'uRF':
     
     temp = glob.glob('uncorrectedRFMatrix*')
     tempName = ["uncorrectedRFMatrix_", str(len(temp)+1), ".txt"]
@@ -92,7 +92,7 @@ if Distance == 'uncorrectedRF':
         
     RFmatrix = np.copy(RFmatrixUncorrected)
     
-if Distance == 'weightedRF':
+if Distance == 'wRF':
     temp = glob.glob('weightedRFMatrix*')
     tempName = ["weightedRFMatrix_", str(len(temp)+1), ".txt"]
     fileName = ''.join(tempName)        
