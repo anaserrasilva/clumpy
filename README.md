@@ -61,7 +61,7 @@ python3 phylogenomicClumpExtractor.py *.tre wRF 2
 
 This pipeline is still *under construction* with functionalities being added.
 
-Near future changes include a more organized output file structure, incorporation of the accessory scripts (clumpSmallTreeLocator.r and deltaInputSTclumpST.py) into the pipeline and inferrence/comparison of clump supertrees.
+Near future changes include a more organized output file structure, incorporation of the accessory scripts (clumpSmallTreeLocator.r and deltaInputSTclumpST.py) into the pipeline and inference/comparison of clump supertrees.
 
 Planned modifications also include support for polytomous trees, as well as rooted trees.
 
