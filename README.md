@@ -1,5 +1,5 @@
 # clumpy
-##Python pipeline to identify and extract clumps of trees from sets of phylogenetic trees with partially overlapping leaf sets
+## Python pipeline to identify and extract clumps of trees from sets of phylogenetic trees with partially overlapping leaf sets
 
 The pipeline was originally described in Serra Silva (2022) and Serra Silva and Wilkinson (202#).
 
@@ -44,19 +44,38 @@ NOTE: If you would like to use a different software to obtain your supertrees, y
 
 ### Using *clumpy*
 
-For computers with graphic capacities
+Example files will be provided at a later date, but the command to run *clumpy* is 
 
+```sh
+python3 phylogenomicClumpExtractor.py *.tre Distance binWidth
+```
 
-For computers without graphic capacities
+The argument *Distance* can be set to uRF (the uncorrected Robinson-Foulds distance) or wRF, which is a correction for tree size described in Serra Silva (202#). The argument *binWidth* sets the histogram bin widths, for a discussion of this setting see Serra Silva (202#). Also, please ensure your tree file is Newick formatted.
 
+Example
+```sh
+python3 phylogenomicClumpExtractor.py *.tre wRF 2
+```
 
 ### Potential additions/modifications
+
+This pipeline is still *under construction* with functionalities being added.
+
+Near future changes include a more organized output file structure, incorporation of the accessory scripts (clumpSmallTreeLocator.r and deltaInputSTclumpST.py) into the pipeline and inferrence/comparison of clump supertrees.
+
+Planned modifications also include support for polytomous trees, as well as rooted trees.
 
 
 ### Citation
 
+To be added
+
 
 ### Author contributions
 
+To be added
+
 
 ### Useful readings
+
+To be added
